@@ -1,0 +1,42 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button Component > forwards additional props to the button element 1`] = `
+<div>
+  <button
+    aria-label="Custom label"
+    class="sc-bczSft eOvKcj"
+  >
+    Click me
+  </button>
+</div>
+`;
+
+exports[`Button Component > renders Button component 1`] = `
+<div>
+  <button
+    class="sc-bczSft eOvKcj"
+  >
+    Click me
+  </button>
+</div>
+`;
+
+exports[`Button Component > renders with primary variant 1`] = `
+<div>
+  <button
+    class="sc-bczSft eOvKcj"
+  >
+    Click me
+  </button>
+</div>
+`;
+
+exports[`Button Component > renders with secondary variant 1`] = `
+<div>
+  <button
+    class="sc-bczSft fTuyEI"
+  >
+    Click me
+  </button>
+</div>
+`;

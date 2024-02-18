@@ -1,0 +1,114 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StoryViewer > renders the story viewer with initial story 1`] = `
+<div>
+  <div
+    class="sc-ksZauW iVoqlh"
+  >
+    <div
+      class="sc-hAZoWV igRyVY"
+    >
+      <div
+        class="sc-bZkfhe fmQblX"
+        data-testid="story-viewer"
+      >
+        <button
+          class="sc-jIYZa-D sc-himrge fpJqVK eKnvTy"
+          data-testid="next-button"
+          disabled=""
+        >
+          <div
+            class="sc-jqUWZQ bnkMjB"
+          >
+            <svg
+              fill="none"
+              height="34"
+              id="Layer_1"
+              version="1.1"
+              viewBox="0 0 512 512"
+              width="34"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M313.749,347.584
+			c8.341,8.341,8.341,21.824,0,30.165c-4.16,4.16-9.621,6.251-15.083,6.251c-5.461,0-10.923-2.091-15.083-6.251L176.917,271.083
+			c-8.341-8.341-8.341-21.824,0-30.165l106.667-106.667c8.341-8.341,21.824-8.341,30.165,0s8.341,21.824,0,30.165L222.165,256
+			L313.749,347.584z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </button>
+        <div
+          class="sc-kLLYlN heVQgd"
+        >
+          <div
+            class="sc-jdANtv eqVMle"
+          />
+          <div
+            class="sc-cCsQgl keulDg"
+          >
+            <div
+              class="sc-jSMdHm eJItaO"
+            >
+              <img
+                alt="user avatar"
+                class="sc-gKXNOb gUEVCF"
+                loading="lazy"
+                shape="circle"
+                src="http://example.com/avatar.jpg"
+              />
+            </div>
+            <span
+              class="sc-ciZfDS eOsdSL"
+            >
+              John Doe
+            </span>
+          </div>
+          <img
+            alt="Story"
+            class="sc-ikZqro fkMjdu"
+            src="http://example.com/story1.jpg"
+          />
+        </div>
+        <button
+          class="sc-jIYZa-D sc-gXmRPE fpJqVK OKXYv"
+          data-testid="previous-button"
+        >
+          <div
+            class="sc-jqUWZQ bnkMjB"
+          >
+            <svg
+              fill="none"
+              height="34"
+              id="Layer_1"
+              version="1.1"
+              viewBox="0 0 512 512"
+              width="34"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M313.749,347.584
+			c8.341,8.341,8.341,21.824,0,30.165c-4.16,4.16-9.621,6.251-15.083,6.251c-5.461,0-10.923-2.091-15.083-6.251L176.917,271.083
+			c-8.341-8.341-8.341-21.824,0-30.165l106.667-106.667c8.341-8.341,21.824-8.341,30.165,0s8.341,21.824,0,30.165L222.165,256
+			L313.749,347.584z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

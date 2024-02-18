@@ -1,0 +1,79 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert Component > renders with the correct message 1`] = `
+<div>
+  <div
+    class="sc-llJbZy yVbvn"
+  >
+    <div
+      class="sc-jSMdHm iLFJpR"
+    >
+      <svg
+        fill="red"
+        height="20px"
+        id="Capa_1"
+        stroke="red"
+        version="1.1"
+        viewBox="0 0 310.806 310.806"
+        width="20px"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          id="SVGRepo_bgCarrier"
+          stroke-width="0"
+        />
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <g
+          id="SVGRepo_iconCarrier"
+        >
+          <path
+            d="M305.095,229.104L186.055,42.579c-6.713-10.52-18.172-16.801-30.652-16.801c-12.481,0-23.94,6.281-30.651,16.801 L5.711,229.103c-7.145,11.197-7.619,25.39-1.233,37.042c6.386,11.647,18.604,18.883,31.886,18.883h238.079 c13.282,0,25.5-7.235,31.888-18.886C312.714,254.493,312.24,240.301,305.095,229.104z M155.403,253.631 c-10.947,0-19.82-8.874-19.82-19.82c0-10.947,8.874-19.821,19.82-19.821c10.947,0,19.82,8.874,19.82,19.821 C175.223,244.757,166.349,253.631,155.403,253.631z M182.875,115.9l-9.762,65.727c-1.437,9.675-10.445,16.353-20.119,14.916 c-7.816-1.161-13.676-7.289-14.881-14.692l-10.601-65.597c-2.468-15.273,7.912-29.655,23.185-32.123 c15.273-2.468,29.655,7.912,32.123,23.185C183.284,110.192,183.268,113.161,182.875,115.9z"
+          />
+           
+        </g>
+      </svg>
+    </div>
+    <span
+      class="sc-iIPlFl kHauvF"
+    >
+      Test Alert Message
+    </span>
+    <div
+      class="sc-gicDKM eDUHUO"
+    >
+      <div
+        class="sc-jSMdHm kMbLdu"
+        data-testid="close-alert-icon"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 5C15.9 5 19 8.1 19 12C19 15.9 15.9 19 12 19C8.1 19 5 15.9 5 12C5 8.1 8.1 5 12 5ZM12 4C7.6 4 4 7.6 4 12C4 16.4 7.6 20 12 20C16.4 20 20 16.4 20 12C20 7.6 16.4 4 12 4Z"
+            fill="#c71111"
+            fill-opacity="1"
+          />
+          <path
+            d="M16.2 14.8L13.4 12L16.2 9.20005L14.8 7.80005L12 10.6L9.19999 7.80005L7.79999 9.20005L10.6 12L7.79999 14.8L9.19999 16.2L12 13.4L14.8 16.2L16.2 14.8Z"
+            fill="#eb5a5a"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="sc-ezWNbD cgQkIn"
+      type="error"
+    />
+  </div>
+</div>
+`;

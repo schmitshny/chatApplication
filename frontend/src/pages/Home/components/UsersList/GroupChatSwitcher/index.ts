@@ -1,0 +1,1 @@
+export { GroupChatSwitcher } from './GroupChatSwitcher';

@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PulseDots > renders three PulseDot components 1`] = `
+<div>
+  <div
+    class="sc-gsnScm fhqUow"
+    data-testid="pulse-dots"
+  >
+    <div
+      class="sc-bczSft kcJqPc"
+    />
+    <div
+      class="sc-bczSft lfjsYf"
+    />
+    <div
+      class="sc-bczSft kcJquh"
+    />
+  </div>
+</div>
+`;

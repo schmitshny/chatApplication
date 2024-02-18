@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MovingDots > renders correctly 1`] = `
+<div>
+  <div
+    class="sc-dkzCjb gGCxeN"
+  >
+    <div
+      class="sc-hKMtDE cBkKWB"
+    />
+    <div
+      class="sc-hKMtDE cBkKWB"
+    />
+    <div
+      class="sc-hKMtDE cBkKWB"
+    />
+  </div>
+</div>
+`;

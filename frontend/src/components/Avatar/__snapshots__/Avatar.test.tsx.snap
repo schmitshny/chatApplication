@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Avatar component > displays custom avatar image 1`] = `
+<div>
+  <div
+    class="sc-bczSft iUPaN"
+  >
+    <img
+      alt="user avatar"
+      class="sc-gsnScm eXjLEN"
+      loading="lazy"
+      shape="circle"
+      src="https://example.com/avatar.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar component > displays with shape circle 1`] = `
+<div>
+  <div
+    class="sc-bczSft iUPaN"
+  >
+    <img
+      alt="user avatar"
+      class="sc-gsnScm eXjLEN"
+      loading="lazy"
+      shape="circle"
+      src="/src/components/Avatar/assets/defaultAvatar.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar component > displays with shape rounded 1`] = `
+<div>
+  <div
+    class="sc-bczSft iUPaN"
+  >
+    <img
+      alt="user avatar"
+      class="sc-gsnScm dTwvaW"
+      loading="lazy"
+      shape="rounded"
+      src="/src/components/Avatar/assets/defaultAvatar.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar component > should render correctly 1`] = `
+<div>
+  <div
+    class="sc-bczSft iUPaN"
+  >
+    <img
+      alt="user avatar"
+      class="sc-gsnScm eXjLEN"
+      loading="lazy"
+      shape="circle"
+      src="/src/components/Avatar/assets/defaultAvatar.jpg"
+    />
+  </div>
+</div>
+`;

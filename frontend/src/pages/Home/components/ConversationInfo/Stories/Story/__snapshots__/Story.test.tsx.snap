@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Story > renders with provided story URL 1`] = `
+<div>
+  <div
+    class="sc-bZkfhe jitLc"
+    data-testid="single-story"
+  >
+    <div
+      class="sc-jSMdHm eJItaO"
+    >
+      <img
+        alt="user avatar"
+        class="sc-gKXNOb gUEVCF"
+        loading="lazy"
+        shape="circle"
+        src="http://example.com/story1.jpg"
+      />
+    </div>
+  </div>
+</div>
+`;
