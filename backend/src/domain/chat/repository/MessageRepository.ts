@@ -27,12 +27,12 @@ class MessageRepository implements IMessageRepository {
         {
           model: User,
           as: 'user1',
-          attributes: ['id', 'name', 'lastName', 'avatarImg'],
+          attributes: { exclude: ['password'] },
         },
         {
           model: User,
           as: 'user2',
-          attributes: ['id', 'name', 'lastName', 'avatarImg'],
+          attributes: { exclude: ['password'] },
         },
         {
           model: Message,

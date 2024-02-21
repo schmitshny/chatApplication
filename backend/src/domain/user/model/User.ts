@@ -51,6 +51,19 @@ export class User extends Model<User, ICreateUser> {
     expires: Date | null;
   } | null;
 
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+    defaultValue: 'offline',
+  })
+  userStatus: string;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: true,
+  })
+  lastSeen: Date;
+
   @BeforeCreate
   static async hashPassword(user: User) {
     user.password = await bcrypt.hash(user.password, 10);

@@ -31,11 +31,6 @@ export class WebRTCHandler {
       data.userToCall.toString(),
     );
 
-    // if (!recipientSocketId) {
-    //   socket.emit('userNotFound', { userToCall: data.userToCall });
-    //  }
-    //TODOOO
-
     if (recipientSocketId) {
       this.io.to(recipientSocketId).emit(webRTCEvents.callUser, {
         signal: data.signalData,
@@ -43,8 +38,7 @@ export class WebRTCHandler {
         name: data.name,
       });
     } else {
-      // socket.emit('callEnded', { message: 'User is not online' });
-      // implement a way to notify the caller that the user is not online
+      socket.emit('userNotFound', { userToCall: data.userToCall });
     }
   }
 
@@ -62,13 +56,9 @@ export class WebRTCHandler {
   }
 
   private handleEndCall(socket: Socket, data: EndCallData): void {
-    console.log('handleEndCall', data);
-
     if (data.to === undefined) return;
 
     const recipientSocketId = this.socketUserMap.get(data.to.toString());
-
-    console.log('recipientSocketId', recipientSocketId);
 
     if (recipientSocketId) {
       this.io.to(recipientSocketId).emit(webRTCEvents.callEnded);

@@ -23,6 +23,8 @@ export const mapConversations = (
       name,
       lastName,
       avatarImg,
+      userStatus,
+      lastSeen,
     } = user1.id == userId ? user2 : user1;
 
     return {
@@ -33,9 +35,11 @@ export const mapConversations = (
       },
       interlocutor: {
         id: interlocutorId,
-        name: name,
-        lastName: lastName,
-        avatarImg: avatarImg,
+        name,
+        lastName,
+        avatarImg,
+        userStatus,
+        lastSeen,
       },
     };
   });

@@ -5,8 +5,13 @@ import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
 import { Icon } from '../../../../../../components';
 import { EmojiPickerContainer, EmojiPickerDropdown } from './EmojiPicker.styles';
+
 interface EmojiPickerProps {
   setMessage: (message: string) => void;
+}
+
+interface EmojiEvent {
+  native: string;
 }
 
 export const EmojiPicker = ({ setMessage }: EmojiPickerProps) => {
@@ -19,7 +24,7 @@ export const EmojiPicker = ({ setMessage }: EmojiPickerProps) => {
     }
   });
 
-  const addEmoji = (e: any) => {
+  const addEmoji = (e: EmojiEvent) => {
     const emoji = e.native;
     setMessage(emoji);
   };

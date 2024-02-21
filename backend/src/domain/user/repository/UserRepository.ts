@@ -71,6 +71,26 @@ class UserRepository implements IUserRepository {
       return null;
     }
   }
+
+  async updateUserStatus(userId: string, status: string): Promise<User | null> {
+    const user = await User.findByPk(userId);
+    if (user) {
+      user.userStatus = status;
+      await user.save();
+      return user;
+    }
+    return null;
+  }
+
+  async updateUserLastSeen(userId: string, date: Date): Promise<User | null> {
+    const user = await User.findByPk(userId);
+    if (user) {
+      user.lastSeen = date;
+      await user.save();
+      return user;
+    }
+    return null;
+  }
 }
 
 export default new UserRepository();

@@ -9,8 +9,6 @@ const StoriesPage = () => {
   const { data: stories } = useStories();
   const [activeStoryId, setActiveStoryId] = useState(0);
 
-  console.log('stories', stories);
-
   return (
     <PageContainer>
       <NavBar />

@@ -1,7 +1,6 @@
 import { useConversationsList } from '../../../../features/chat/useConversationsList';
 import { Icon } from '../../../../components';
 import { User } from '../../../../features/auth/types';
-import { UserStatus } from '../../../../features/chat/types';
 import { GroupChatSwitcher } from './GroupChatSwitcher';
 import { SectionHeader } from '../SectionHeader';
 import { UserListItem } from './UserListItem';
@@ -13,10 +12,9 @@ interface UsersListProps {
   onUserSelect: (user: User) => void;
   selectedUserId?: number;
   userId: number;
-  onlineUsers: UserStatus[];
 }
 
-export const UsersList = ({ onUserSelect, selectedUserId, userId, onlineUsers }: UsersListProps) => {
+export const UsersList = ({ onUserSelect, selectedUserId, userId }: UsersListProps) => {
   const { conversationsList, isLoading } = useConversationsList(userId);
 
   return (
@@ -35,7 +33,7 @@ export const UsersList = ({ onUserSelect, selectedUserId, userId, onlineUsers }:
               onUserSelect={onUserSelect}
               key={interlocutor.id}
               isUserSelected={selectedUserId === interlocutor.id}
-              status={onlineUsers.find((onlineUser) => onlineUser.userId === interlocutor.id)}
+              status={interlocutor.userStatus}
               lastMessage={lastMessage}
               conversationId={conversationId}
               userId={userId}

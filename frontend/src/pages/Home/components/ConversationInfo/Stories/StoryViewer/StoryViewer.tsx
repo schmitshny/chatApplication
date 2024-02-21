@@ -42,7 +42,6 @@ export const StoryViewer = ({ stories, initialStoryIndex, onClose, setActiveStor
     );
 
     const currentTimer = timerRef.current;
-    console.log('initialStoryIndex', initialStoryIndex);
 
     return () => {
       if (currentTimer) {

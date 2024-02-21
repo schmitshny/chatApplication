@@ -5,8 +5,6 @@ import { processImage } from '../../../domain/chat/Service/utils';
 
 class StoryService implements IStoryService {
   async addStory(createDto: StoryCreateDTO) {
-    console.log('creae ', createDto);
-
     const imageUrl = await processImage(createDto.imageUrl);
 
     if (!imageUrl) throw new Error('Something went wrong');

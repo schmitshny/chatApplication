@@ -1,9 +1,8 @@
 import { Server as WebSocketServer, Socket } from 'socket.io';
 import { SOCKET_EVENTS, TypingData } from '../types';
+import UserService from '../../../domain/user/service/UserService';
 
 export class UserStatusHandler {
-  private onlineUsers = new Map<string, boolean>();
-
   constructor(
     private io: WebSocketServer,
     private socketUserMap: Map<string, string>,
@@ -27,22 +26,11 @@ export class UserStatusHandler {
     this.io.emit(SOCKET_EVENTS.userTyping, { userId, isTyping });
   }
 
-  updateUserStatus(userId: string, isOnline: boolean) {
-    isOnline
-      ? this.onlineUsers.set(userId, true)
-      : this.onlineUsers.delete(userId);
+  updateUserOnlineStatus(userId: string, status: string) {
+    UserService.updateUserStatus(userId, status);
 
-    this.emitUserStatusUpdate();
-  }
-
-  private emitUserStatusUpdate() {
-    const onlineStatuses = Array.from(this.onlineUsers.entries()).map(
-      ([userId, isOnline]) => ({
-        userId,
-        isOnline,
-      }),
-    );
-
-    this.io.emit(SOCKET_EVENTS.userStatusUpdate, onlineStatuses);
+    if (status === 'offline') {
+      UserService.updateUserLastSeen(userId, new Date());
+    }
   }
 }

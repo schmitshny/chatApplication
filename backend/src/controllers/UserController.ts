@@ -101,4 +101,20 @@ export class UserController {
       return res.status(500).send({ message: 'Something went wrong', error });
     }
   }
+
+  static async updateUserStatus(req: Request, res: Response) {
+    const userId = req.params.id;
+    const { status } = req.body;
+
+    try {
+      const updatedUser = await UserService.updateUserStatus(userId, status);
+      if (!updatedUser) {
+        return res.status(404).send({ message: 'User not found' });
+      }
+      return res.status(200).json(updatedUser);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send({ message: 'Something went wrong', error });
+    }
+  }
 }

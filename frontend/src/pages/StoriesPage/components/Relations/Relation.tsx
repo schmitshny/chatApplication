@@ -1,3 +1,4 @@
+import React from 'react';
 import { Avatar } from '../../../../components';
 import { Story } from '../../../../features/stories/types';
 import { useDateFormat } from '../../../../hooks/useDateFormat';
@@ -10,13 +11,16 @@ interface RelationProps {
   index: number;
 }
 
-export const Relation = ({ story, isActive, handleClick, index }: RelationProps) => {
+const Relation: React.ForwardRefRenderFunction<HTMLDivElement, RelationProps> = (
+  { story, isActive, handleClick, index },
+  ref,
+) => {
   const { timeSince } = useDateFormat();
   const { user, createdAt } = story;
   const storyTime = timeSince(createdAt);
 
   return (
-    <RelationWrapper $isActive={isActive} onClick={() => handleClick(index)}>
+    <RelationWrapper $isActive={isActive} onClick={() => handleClick(index)} ref={ref}>
       <StoryAvatar>
         <Avatar avatarUrl={story.imageUrl} />
       </StoryAvatar>
@@ -27,3 +31,5 @@ export const Relation = ({ story, isActive, handleClick, index }: RelationProps)
     </RelationWrapper>
   );
 };
+
+export default React.forwardRef(Relation);

@@ -1,10 +1,20 @@
 import styled from 'styled-components';
+import { MessageActionsContainer } from './MessageActions/MessageActions.styles';
 
 export const MessageContainer = styled.div`
+  position: relative;
   display: flex;
   gap: 16px;
-  padding-inline: 16px;
+  padding: 16px;
   align-items: flex-start;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.hoverBackground};
+
+    ${MessageActionsContainer} {
+      display: flex;
+    }
+  }
 `;
 
 export const MessageInfoWrapper = styled.div`
@@ -67,4 +77,9 @@ export const MessageTime = styled.span`
   font-weight: 200;
   line-height: normal;
   letter-spacing: 0.264px;
+`;
+
+export const MessageEmojisContainer = styled.div`
+  display: flex;
+  gap: 5px;
 `;

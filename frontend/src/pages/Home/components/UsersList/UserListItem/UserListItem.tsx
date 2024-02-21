@@ -1,6 +1,5 @@
 import { useDateFormat } from '../../../../../hooks/useDateFormat';
 import { Avatar, MovingDots } from '../../../../../components';
-import { UserStatus } from '../../../../../features/chat/types';
 import { User } from '../../../../../features/auth/types';
 import { shortenText } from '../../../../../utils/shortenText';
 import { LastMessage, LastMessageTime, UserContainer, UserName } from './UserListItem.styles';
@@ -12,7 +11,7 @@ interface UserListItemProps {
   interlocutor: User;
   onUserSelect: (user: User) => void;
   isUserSelected: boolean;
-  status?: UserStatus;
+  status?: string;
   lastMessage?: {
     content: string;
     sentAt: string;
@@ -47,7 +46,7 @@ export const UserListItem = ({
 
   return (
     <UserContainer onClick={handleUserSelect} $isActive={isUserSelected}>
-      <Avatar avatarUrl={avatarImg} isOnline={status?.isOnline} displayStatus={true} />
+      <Avatar avatarUrl={avatarImg} isOnline={status === 'online'} displayStatus={true} />
       <div>
         <UserName>{`${name} ${lastName}`}</UserName>
         {isTyping ? (

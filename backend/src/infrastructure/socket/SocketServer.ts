@@ -48,7 +48,7 @@ export class SocketServer {
 
     if (userId) {
       this.socketUserMap.set(userId.toString(), socket.id);
-      this.userStatusHandler.updateUserStatus(userId, true);
+      this.userStatusHandler.updateUserOnlineStatus(userId, 'online');
     }
   }
 
@@ -57,7 +57,7 @@ export class SocketServer {
       ([_, socketId]) => socketId === socket.id,
     )?.[0];
     if (userId) {
-      this.userStatusHandler.updateUserStatus(userId, false);
+      this.userStatusHandler.updateUserOnlineStatus(userId, 'offline');
       this.socketUserMap.delete(socket.id);
     }
   }

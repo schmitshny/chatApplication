@@ -9,3 +9,13 @@ export const RelationsListWrapper = styled.div`
   padding-bottom: 20px;
   height: 100%;
 `;
+
+export const SectionTitle = styled.h5`
+  padding-inline: 16px;
+  margin-bottom: 8px;
+`;
+
+export const ScrollableContainer = styled.div`
+  overflow-y: auto;
+  height: 100%;
+`;

@@ -19,5 +19,10 @@ export const userRoutes = (): Router => {
   );
   router.put('/update-user/:id', authMiddleware, UserController.updateUser);
   router.get('/get-user/:id', authMiddleware, UserController.getUserById);
+  router.put(
+    '/update-user-status/:id',
+    authMiddleware,
+    UserController.updateUserStatus,
+  );
   return router;
 };

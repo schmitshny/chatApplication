@@ -50,6 +50,24 @@ class UserService implements IUserService {
       throw new Error('Failed to search users');
     }
   }
+
+  async updateUserStatus(userId: string, status: string): Promise<User | null> {
+    try {
+      return await UserRepository.updateUserStatus(userId, status);
+    } catch (error) {
+      console.error(error);
+      throw new Error('Failed to update user status');
+    }
+  }
+
+  async updateUserLastSeen(userId: string, date: Date): Promise<User | null> {
+    try {
+      return await UserRepository.updateUserLastSeen(userId, date);
+    } catch (error) {
+      console.error(error);
+      throw new Error('Failed to update user last seen');
+    }
+  }
 }
 
 export default new UserService();

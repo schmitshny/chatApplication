@@ -6,6 +6,8 @@ export const UserSchema = z.object({
   lastName: z.string(),
   email: z.string().email(),
   avatarImg: z.string().optional(),
+  userStatus: z.string().optional(),
+  lastSeen: z.date().optional(),
 });
 
 export const LoginDataSchema = z.object({
@@ -15,13 +17,15 @@ export const LoginDataSchema = z.object({
 
 export const RegisterDataSchema = UserSchema.extend({
   password: z.string(),
-  confirmPassword: z.string().refine(function(this: { password: string }, value: string) {
-    return value === this.password;
-  }, {
-    message: "Password and confirm password don't match",
-  }),
+  confirmPassword: z.string().refine(
+    function (this: { password: string }, value: string) {
+      return value === this.password;
+    },
+    {
+      message: "Password and confirm password don't match",
+    },
+  ),
 });
-
 
 export type User = z.infer<typeof UserSchema>;
 export type LoginData = z.infer<typeof LoginDataSchema>;

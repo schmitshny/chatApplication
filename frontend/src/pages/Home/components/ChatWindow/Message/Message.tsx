@@ -13,7 +13,10 @@ import {
   FileName,
   MessageTime,
   UserName,
+  MessageEmojisContainer,
 } from './Message.styles';
+import { MessageActions } from './MessageActions/MessageActions';
+import { MessageEmoji } from './MessageEmoji';
 
 export interface MessageProps {
   message: IMessage;
@@ -22,10 +25,18 @@ export interface MessageProps {
 export const Message = ({ message }: MessageProps) => {
   const { content, sentAt, senderId, imageUrl, file } = message;
   const [displayImageModal, setDisplayImageModal] = useState(false);
+  const [messageEmojis, setMessageEmojis] = useState<string[]>([]);
+
   const { data: users } = useUsers();
   const user = users?.find((user: User) => user.id === senderId);
 
   const { formatDate } = useDateFormat();
+
+  const handleEmojiClick = (clickedEmojiIndex: number) => {
+    setMessageEmojis(messageEmojis.filter((_, index) => index !== clickedEmojiIndex));
+    console
+  };
+
   return (
     <MessageContainer>
       <Avatar avatarUrl={user?.avatarImg} />
@@ -44,10 +55,18 @@ export const Message = ({ message }: MessageProps) => {
             </FileName>
           </MessageFile>
         )}
+        {messageEmojis.length > 0 && (
+          <MessageEmojisContainer>
+            {messageEmojis.map((emoji, index) => (
+              <MessageEmoji key={index} emoji={emoji} id={index} onClick={handleEmojiClick}></MessageEmoji>
+            ))}
+          </MessageEmojisContainer>
+        )}
         <Modal show={displayImageModal} onClose={() => setDisplayImageModal(false)}>
           <img src={imageUrl} alt="message" />
         </Modal>
       </div>
+      <MessageActions messageEmojis={messageEmojis} setMessageEmojis={setMessageEmojis} />
     </MessageContainer>
   );
 };

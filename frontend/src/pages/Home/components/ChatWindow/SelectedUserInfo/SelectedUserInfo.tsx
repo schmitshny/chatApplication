@@ -1,18 +1,27 @@
 import { Icon, Avatar } from '../../../../../components';
 import { User } from '../../../../../features/auth/types';
 import { useVideoChat } from '../../../../../features/videoChat/useVideoChat';
-import { IconsWrapper, SelectedUserInfoWrapper, SelectedUserName } from './SelectedUserInfo.styles';
+import { useDateFormat } from '../../../../../hooks/useDateFormat';
+import { IconsWrapper, SelectedUserInfoWrapper, SelectedUserName, SelectedUserStatus } from './SelectedUserInfo.styles';
+import { getUserStatusDisplay } from './utils';
 
 interface SelectedUserInfoProps {
   selectedUser: User;
 }
 
 export const SelectedUserInfo = ({ selectedUser }: SelectedUserInfoProps) => {
-  const { avatarImg, name } = selectedUser;
+  const { avatarImg, name, userStatus, lastSeen } = selectedUser;
+  const { timeSince } = useDateFormat();
+
+  const userStatusDisplay = getUserStatusDisplay(timeSince, userStatus, lastSeen);
+
   return (
     <SelectedUserInfoWrapper>
-      <Avatar size="small" shape="circle" avatarUrl={avatarImg} displayStatus />
-      <SelectedUserName>{name}</SelectedUserName>
+      <Avatar size="small" shape="circle" avatarUrl={avatarImg} displayStatus isOnline={userStatus === 'online'} />
+      <div>
+        <SelectedUserName>{name}</SelectedUserName>
+        <SelectedUserStatus>{userStatusDisplay}</SelectedUserStatus>
+      </div>
     </SelectedUserInfoWrapper>
   );
 };
