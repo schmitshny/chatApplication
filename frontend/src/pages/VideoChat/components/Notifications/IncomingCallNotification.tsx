@@ -9,7 +9,7 @@ import {
 import { useVideoChat } from '../../../../features/videoChat/useVideoChat';
 
 export const IncomingCallNotification = () => {
-  const { answerCall, call, callAccepted, callEnded, leaveCall, setSelectedUser } = useVideoChat();
+  const { answerCall, call, callAccepted, callEnded, setSelectedUser } = useVideoChat();
 
   if (!call?.isReceivingCall || callAccepted || callEnded) return null;
 

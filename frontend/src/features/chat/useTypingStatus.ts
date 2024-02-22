@@ -9,7 +9,7 @@ interface TypingData {
 
 export const useTypingStatus = (socket: Socket, otherUserId: number, currentUserId: number) => {
   const [isTyping, setIsTyping] = useState(false);
-  const typingTimer = useRef<number | null>(null);
+  const typingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleTyping = useCallback(
     (data: TypingData) => {
@@ -35,7 +35,7 @@ export const useTypingStatus = (socket: Socket, otherUserId: number, currentUser
     socket.emit(SOCKET_EVENTS.typing, { userId: currentUserId, recipientId: otherUserId, isTyping });
   };
 
-  const handleTypingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTypingChange = () => {
     if (typingTimer.current) {
       clearTimeout(typingTimer.current);
     }

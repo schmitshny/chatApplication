@@ -3,15 +3,11 @@ import { IconsWrapper } from './Sidebar.styles';
 import { Icon } from '../../../../components';
 
 interface SidebarProps {
-  userId: number;
+  userId?: number;
 }
 
 export const Sidebar = ({ userId }: SidebarProps) => {
   const { leaveCall } = useVideoChat();
 
-  return (
-    <IconsWrapper>
-      <Icon name="reject" onClick={() => leaveCall(userId)} />
-    </IconsWrapper>
-  );
+  return <IconsWrapper>{userId && <Icon name="reject" onClick={() => leaveCall(userId)} />}</IconsWrapper>;
 };

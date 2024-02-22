@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <HomePageContainer>
       <NavBar />
-      <UsersList onUserSelect={setSelectedUser} selectedUserId={selectedUser?.id} userId={user?.id} />
+      {user?.id && <UsersList onUserSelect={setSelectedUser} selectedUserId={selectedUser?.id} userId={user?.id} />}
       {selectedUser && user ? (
         <>
           <ChatWindow currentUser={user} selectedUser={selectedUser} />
