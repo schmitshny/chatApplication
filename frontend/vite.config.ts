@@ -14,4 +14,7 @@ export default defineConfig({
       'readable-stream': 'vite-compatible-readable-stream',
     },
   },
+  server: {
+    port: 8080,
+  }
 });
