@@ -16,7 +16,15 @@ export class Database {
       database: process.env.DB_NAME,
       username: process.env.DB_USER,
       password: process.env.DB_PASS,
+      port: parseInt(process.env.DB_PORT as string),
       models: [User, Message, Conversation, File, Story],
+      ssl: true,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+      },
     });
     this.init();
   }
