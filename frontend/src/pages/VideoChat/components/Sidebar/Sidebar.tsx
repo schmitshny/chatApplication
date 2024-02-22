@@ -9,5 +9,5 @@ interface SidebarProps {
 export const Sidebar = ({ userId }: SidebarProps) => {
   const { leaveCall } = useVideoChat();
 
-  return <IconsWrapper>{userId && <Icon name="reject" onClick={() => leaveCall(userId)} />}</IconsWrapper>;
+  return <IconsWrapper>{userId && <Icon name="reject" onClick={() => leaveCall(userId)} />} </IconsWrapper>;
 };

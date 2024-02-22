@@ -1,5 +1,4 @@
 import { ErrorMessage, FormContainer, StyledForm, StyledHeader, StyledLink } from './Form.styles';
-import { InputWithIcon } from '../../../components/Input/Input';
 import { FaUserAlt } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
 import { RiLockPasswordFill, RiLockPasswordLine } from 'react-icons/ri';
