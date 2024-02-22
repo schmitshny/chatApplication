@@ -21,7 +21,7 @@ export class AuthController {
       res.cookie('token', token, {
         sameSite : "none",
         secure: true,
-        domain: "jellyfish-app-7tzd4.ondigitalocean.app",
+        domain: "ondigitalocean.app",
         httpOnly: true,
         });
       return res.status(201).json({ name, lastName, email, id });
@@ -44,7 +44,7 @@ export class AuthController {
       res.cookie('token', token, {
         sameSite : "none",
         secure: true,
-        domain: "jellyfish-app-7tzd4.ondigitalocean.app",
+        domain: "ondigitalocean.app",
         httpOnly: true,
         });
       return res.status(200).json({ name, lastName, id, avatarImg });
