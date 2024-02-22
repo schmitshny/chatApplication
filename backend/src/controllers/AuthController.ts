@@ -18,7 +18,12 @@ export class AuthController {
 
       const token = createToken(user);
       const { id } = user;
-      res.cookie('token', token, { httpOnly: true });
+      res.cookie('token', token,  {
+sameSite : "none",
+secure: true,
+domain: "jellyfish-app-7tzd4.ondigitalocean.app"
+httpOnly: true
+});
       return res.status(201).json({ name, lastName, email, id });
     } catch (error) {
       console.log(error);
@@ -36,7 +41,12 @@ export class AuthController {
       const user = await AuthService.authenticateUser({ email, password });
       const { name, lastName, id, avatarImg } = user;
       const token = createToken(user);
-      res.cookie('token', token, { httpOnly: true });
+      res.cookie('token', token,  {
+sameSite : "none",
+secure: true,
+domain: "jellyfish-app-7tzd4.ondigitalocean.app"
+httpOnly: true
+});
       return res.status(200).json({ name, lastName, id, avatarImg });
     } catch (error) {
       console.log(error);
